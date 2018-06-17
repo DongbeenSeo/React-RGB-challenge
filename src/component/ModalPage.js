@@ -19,12 +19,12 @@ export default class ModalPage extends Component {
     return (
       <div>
         {pageState === "correct" ? (
-          <div>
+          <div className="correct modalpage">
             <div>THAT'S RIGHT</div>
             <button onClick={this.handleCorrectBtnClick}>NEXT COLOR</button>
           </div>
         ) : (
-          <div>
+          <div className="wrong modalpage">
             <div>TOO BAD :( </div>
             <div>score: {score}</div>
             <button onClick={this.handleWrongBtnClick}>PLAT AGAIN</button>

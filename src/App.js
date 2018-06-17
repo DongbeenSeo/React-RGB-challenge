@@ -56,33 +56,37 @@ class App extends Component {
   }
 
   render() {
-    const { answer, problem, score, cnt, pageState } = this.state;
+    const { answer, problem, score, pageState } = this.state;
 
     return (
       <div>
-        THE GREAT
-        <h1>RGB Challenge</h1>GUESSING CHALLENGE
-        <div>score: {score}</div>
-        <div>{answer}</div>
-        <ul>
-          {pageState === "main" ? (
-            <IndexPage
-              answer={answer}
-              problem={problem}
-              score={score}
-              onChange={this.handleCheckScore}
-              createProblem={this.createProblem}
-              onPageChange={this.handlePageState}
-            />
-          ) : (
+        {pageState === "main" ? (
+          <div className="mainpage">
+            THE GREAT
+            <h1>RGB Challenge</h1>GUESSING CHALLENGE
+            <div>score: {score}</div>
+            <div>{answer}</div>
+            <ul>
+              <IndexPage
+                answer={answer}
+                problem={problem}
+                score={score}
+                onChange={this.handleCheckScore}
+                createProblem={this.createProblem}
+                onPageChange={this.handlePageState}
+              />
+            </ul>
+          </div>
+        ) : (
+          <div>
             <ModalPage
               score={score}
               pageState={pageState}
               onChange={this.handleCheckScore}
               onPageChange={this.handlePageState}
             />
-          )}
-        </ul>
+          </div>
+        )}
       </div>
     );
   }
