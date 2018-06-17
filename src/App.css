@@ -1,0 +1,13 @@
+.problem-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.problem {
+    width: 100px;
+    height: 100px;
+    list-style-type: none;
+    margin-right: 20px;
+    border-radius: 50%;
+}
