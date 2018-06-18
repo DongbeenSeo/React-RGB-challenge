@@ -5,7 +5,7 @@ let cnt = 1;
 export default class IndexPage extends Component {
   handleClickColor = e => {
     let { answer, score, onChange, createProblem, onPageChange } = this.props;
-    if (answer === e.target.outerText) {
+    if (answer === e.currentTarget.title) {
       onChange(++score);
       onPageChange("correct");
     } else {
@@ -24,6 +24,7 @@ export default class IndexPage extends Component {
             key={cnt++}
             className="problem"
             style={{ backgroundColor: `${item}` }}
+            title={`${item}`}
             onClick={this.handleClickColor}
           >
             {/* {item} */}
