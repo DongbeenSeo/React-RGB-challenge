@@ -26,7 +26,7 @@ export default class IndexPage extends Component {
             style={{ backgroundColor: `${item}` }}
             onClick={this.handleClickColor}
           >
-            {/* {item} */}
+            {item}
           </li>
         ))}
       </div>
